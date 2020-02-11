@@ -49,7 +49,9 @@ connection:`mongoose.connect(DATABASE,{options}).then(con => consol.log("DB conn
 
 Model: Blueprint to create documents
 1.Create a Schema
+
 2.Create Model form that Schema
+
 3.Create Document from Model
 
 1. Create Schema
