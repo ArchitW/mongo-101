@@ -40,3 +40,50 @@ https://docs.mongodb.com/manual/mongo/ [Ref Manual]
 | Update Whole Doc `Replace`                                                | `db.db-name.replaceOne({...,...,...})`                              | `replaceOne(), replaceMany()`                                                                                                                                                                   |
 | Delete Document                                                           | `db.db-name.deleteOne({name:"Test"})`                               | `deleteOne, deleteMany`                                                                                                                                                                         |
 | Delete Everything                                                         | `db.db-name.deleteMany({})`                                         | \*careful                                                                                                                                                                                       |
+
+
+### Mongooese
+- object data modeling (ODM)
+
+connection:`mongoose.connect(DATABASE,{options}).then(con => consol.log("DB connected")`
+
+Model: Blueprint to create documents
+1.Create a Schema
+2.Create Model form that Schema
+3.Create Document from Model
+
+1. Create Schema
+```
+const tours = mongooese.Schema({
+ name: {
+    //Schema type options
+    type: String,
+    required: [true, 'A tour must have a name'], //Validator:  Errors if false
+    unique: true
+  },
+  rating: {
+    type: Number,
+    default: 4.5 // Default value
+  },
+  price: Number
+});
+```
+2. Create Model
+```
+const Tour = mongooes.Model('Tour', tourSchema);
+```
+3. Document Model
+```
+const testTour = new Tour({
+name:"A test Tour",
+price:3000
+});
+```
+3.1 Saving Data to DB
+```
+testTour.save()
+.then(doc => {console.log(doc)}) // resolved value returns final document.
+.catch(err => console.log('error');
+```
+
+
