@@ -48,6 +48,7 @@ https://docs.mongodb.com/manual/mongo/ [Ref Manual]
 connection:`mongoose.connect(DATABASE,{options}).then(con => consol.log("DB connected")`
 
 Model: Blueprint to create documents
+
 1.Create a Schema
 
 2.Create Model form that Schema
